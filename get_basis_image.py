@@ -96,7 +96,7 @@ def basis_translate(atoms):
   cg = np.mean(pos,0)
   dr = 7.5 - cg #move to center of 15A-cubic box
   dpos = np.repeat(dr.reshape(1,3),N,0)
-  new_pos = dpos + dr
+  new_pos = dpos + pos
   atoms_ = atoms.copy()
   atoms_.cell = 15.0*np.identity(3)
   atoms_.positions = new_pos
